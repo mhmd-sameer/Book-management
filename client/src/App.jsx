@@ -1,13 +1,22 @@
-import Book from './Components/Book'
+import Book from './Components/Books'
+import AddBook from './Components/AddBook'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import './App.css'
+import UpdateBook from './Components/UpdateBook'
+
 
 function App() {
 
 
   return (
    <div>
-    <h1>hello world</h1>
-    <Book />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Book/>}/>
+          <Route path="/add" element={<AddBook/>}/>
+          <Route path="/update/:id" element={<UpdateBook/>}/>
+        </Routes>
+      </BrowserRouter>
    </div>
   )
 }
